@@ -1,0 +1,1033 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+/* ------All Fonts------- */
+/* 
+font-family: 'Poppins', sans-serif;
+font-family: 'Ubuntu', sans-serif; 
+*/
+
+/* ------Body Style Start------ */
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+}
+
+/*//! -------Navigation Start------ */
+.navContainer {
+  width: 100vw;
+  background-color: rgba(204, 204, 204, 0.356);
+  position: fixed;
+  z-index: 70;
+  /* backdrop-filter: blur(10px); */
+}
+.navigation {
+  width: 90%;
+  height: 70px;
+  margin: 0px auto 0px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: visible;
+  /* backdrop-filter: blur(10px); */
+}
+.navBlurbg {
+  position: fixed;
+  background-color: rgb(204, 204, 204, 0.356);
+  backdrop-filter: blur(10px);
+  width: 100vw;
+  height: 70px;
+  z-index: 60;
+}
+.navigation .logo {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 3em;
+}
+.navigation .logo span {
+  color: crimson;
+}
+.navLinkContainer {
+  list-style-type: none;
+  /* width: 60%; */
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.navLinkContainer li {
+  font-size: 1.4em;
+  margin-left: 40px;
+}
+.hireButton {
+  width: 90px;
+  height: 35px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1em;
+  color: white;
+  border-radius: 20px;
+  outline: none;
+  background-color: #147ce5;
+  border: solid#147ce5 3px;
+  transition: 0.5s;
+}
+.hireButton:hover {
+  background-color: rgba(97, 97, 97, 0.219);
+}
+
+/*//!------------Manu Button Style Start------------*/
+.manuButton {
+  /* height: 27px; */
+  height: 35px;
+  width: 35px;
+  display: none;
+  left: 0;
+  position: absolute;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s;
+  z-index: 100;
+}
+.bar1,
+.bar2,
+.bar3 {
+  height: 10px;
+  width: 10px;
+  transition: 0.3s;
+  border-radius: 5px;
+  border: solid black 2px;
+}
+.manuButton .bar1 {
+  transform-origin: 0% 50%;
+}
+.manuButton .bar3 {
+  transform-origin: 0% 50%;
+}
+
+/*--------Add When Ckicked-------*/
+.bar2Clicked {
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+}
+.bar1Clicked {
+  transform: rotate(40deg);
+}
+.bar3Clicked {
+  transform: rotate(-40deg);
+}
+.bar1Clicked,
+.bar3Clicked {
+  height: 5px;
+  width: 35px;
+  border-radius: 2px;
+  border: solid black 1px;
+  background-color: crimson;
+}
+.manuButtonClicked {
+  height: 27px;
+}
+/*------------Manu Button Style End------------*/
+
+/*//!------------Hidden Sidebar Start-----------*/
+.sideBar {
+  position: absolute;
+  height: 100vh;
+  width: 0%;
+  background-color: rgb(79, 30, 126);
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  z-index: 90;
+  overflow: hidden;
+}
+.sidebarLinkContainer {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* background-color: aqua; */
+}
+.sidebarLinkContainer div {
+  color: white;
+  font-size: 1.5em;
+}
+.sideBarVisible {
+  width: 40%;
+}
+/*------------Hidden Side bar End-----------*/
+
+/*---------Overlay Start-------*/
+.overlay {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 80;
+  top: 0;
+  backdrop-filter: blur(3px);
+  transition: 0.5s;
+}
+.overlayVisible {
+  display: block;
+}
+/*---------Overlay End-------*/
+
+/*-----------Mobile Hire Button---------*/
+.mobileHireButton {
+  display: none;
+  font-size: 1.3em;
+  height: 35px;
+  width: 90px;
+  position: absolute;
+  right: 0;
+}
+
+/*//! --------Header Start--------- */
+.headerContainer {
+  /* z-index: -1; */
+  /* transform: translateY(300px); */
+  position: sticky;
+  top: 0;
+}
+.header {
+  height: 100vh;
+  /* background-image: url('/rec/img/headerbg.jpg');
+  background-position: center;
+  background-size: cover; */
+  /* background-color: #2f3542; */
+  background-image: url(rec/IconSvg/Pattern-Randomized.svg);
+  /* background-position: ; */
+  background-size: cover;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 0% 100%); */
+}
+.headerSvg{
+  height: 350px;
+}
+.headerElements {
+  height: 500px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  transform: translateX(-20%);
+  /* margin-right: 70px; */
+}
+.profilebg {
+  position: absolute;
+  top: -19px;
+  left: 8px;
+  height: 300px;
+  width: 300px;
+  transform: rotateY(180deg);
+}
+.profile {
+  height: 200px;
+  width: 200px;
+  position: relative;
+}
+
+.profileImg {
+  height: 200px;
+  border-radius: 50%;
+  border: solid white 5px;
+}
+.headerTitle {
+  color: white;
+  font-size: 3em;
+  font-family: "Ubuntu", sans-serif;
+  transform: translateY(20px);
+}
+/* ---------Header Animation Style Start---------- */
+.warper {
+  height: 40px;
+  width: 220px;
+  background-color: rgba(255, 255, 255, 0);
+  position: relative;
+  overflow: hidden;
+  animation-name: swapAni;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  display: flex;
+  align-items: center;
+  transform: translateX(-5px);
+}
+@keyframes swapAni {
+  0% {
+    width: 4px;
+  }
+  50% {
+    width: 220px;
+  }
+  100% {
+    width: 4px;
+  }
+}
+.warper::after {
+  content: "";
+  background-color: rgb(45, 212, 241);
+  height: 40px;
+  width: 4px;
+  position: absolute;
+  right: 0;
+  border-radius: 10px;
+  animation: colorChange 20s ease-in-out 0s infinite;
+}
+@keyframes colorChange {
+  0% {
+    background-color: violet;
+  }
+  25% {
+    background-color: rgb(194, 22, 22);
+  }
+  50% {
+    background-color: rgb(230, 123, 36);
+  }
+  75% {
+    background-color: rgb(51, 218, 240);
+  }
+  100% {
+    background-color: violet;
+  }
+}
+.text1,
+.text2,
+.text3,
+.text4 {
+  font-size: 1.5em;
+  color: white;
+  white-space: nowrap;
+  position: absolute;
+  visibility: hidden;
+}
+.text1 {
+  left: 40px;
+  animation: text1show 20s linear 0s infinite;
+}
+@keyframes text1show {
+  0% {
+    visibility: visible;
+  }
+  25% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+.text2 {
+  left: 40px;
+  animation: text2show 20s linear 5s infinite;
+}
+@keyframes text2show {
+  0% {
+    visibility: visible;
+  }
+  25% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+.text3 {
+  left: 30px;
+  animation: text3show 20s linear 10s infinite;
+}
+@keyframes text3show {
+  0% {
+    visibility: visible;
+  }
+  25% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+.text4 {
+  left: 0px;
+  animation: text4show 20s linear 15s infinite;
+}
+@keyframes text4show {
+  0% {
+    visibility: visible;
+  }
+  25% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+/* ---------Header Animation Style End---------- */
+.socalMediaLinks {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+.facebookSvg,
+.instagramSvg,
+.twitterSvg,
+.githubSvg {
+  height: 40px;
+  width: 40px;
+  border: solid rgb(255, 255, 255) 2px;
+  /* stroke-width: 2px; */
+  border-radius: 50%;
+  transition: 0.5s;
+  background-color: white;
+}
+.facebookSvg:hover {
+  background-color: #016ec2;
+  box-shadow: #0091ff 0px 0px 50px;
+}
+.instagramSvg:hover {
+  background-color: rgb(233, 99, 121);
+  box-shadow: rgb(233, 99, 121) 0px 0px 50px;
+}
+.twitterSvg:hover {
+  background-color: #0091ff;
+  box-shadow: #0091ff 0px 0px 50px;
+}
+.githubSvg:hover {
+  background-color: #b8b8b8;
+  box-shadow: #b8b8b8 0px 0px 50px;
+}
+
+/*//! ---------------Main Content---------------  */
+
+.mainContent {
+  /* position: relative; */
+  /* overflow: visible; */
+  /* z-index: 5; */
+  background-color: white;
+  /* border-top: solid #FF0066 5px; */
+  width: 100%;
+  clip-path: polygon(0% 2%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/*//! ---------------About Section Start---------------- */
+.aboutGridContainer {
+  margin: auto;
+  display: grid;
+  grid-template-areas:
+    "abST abST"
+    "abIC abMC";
+  grid-template-columns: 300px 500px;
+  grid-row-gap: 100px;
+  /* grid-column-gap: 100px; */
+  justify-content: space-between;
+  align-items: center;
+  width: 950px;
+}
+.aboutSectionTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* position: relative; */
+  grid-area: abST;
+}
+.aboutImageContainer {
+  grid-area: abIC;
+  height: 314px;
+  width: 314px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: black 0px 0px 5px 0px;
+  position: relative;
+}
+.aboutMainContent {
+  grid-area: abMC;
+}
+
+.aboutSection .aboutSectionTitle .mainTitle {
+  /* justify-self: center; */
+  text-align: center;
+  font-size: 2em;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+}
+.aboutSection .aboutSectionTitle .subTitle {
+  /* justify-self: center; */
+  font-size: 1.3em;
+  /* color: crimson; */
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  width: 90px;
+  /* padding: 5px; */
+}
+
+.aboutSection .aboutSectionTitle .subTitle::after {
+  content: "";
+  height: 3px;
+  width: 150px;
+  background-color: purple;
+  display: block;
+  position: absolute;
+  left: -50%;
+  top: 50%;
+  transform: translate(10%, -50%);
+  z-index: -1;
+}
+.sectionContent {
+  display: flex;
+  /* padding-left: 100px; */
+  margin-top: 70px;
+  justify-content: center;
+  align-items: center;
+  max-width: 1024px;
+  /* margin-left: 100px; */
+  flex-direction: column;
+}
+
+.aboutMainContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;
+  /* background-color: lawngreen; */
+}
+.aboutMainContent .aboutParagraph {
+  font-size: 1.4em;
+}
+
+.aboutMainContent .aboutBotton button {
+  height: 40px;
+  width: 120px;
+  /* background-color: rgb(163, 84, 236); */
+  border: solid purple 3px;
+  border-radius: 25px;
+  /* border: none; */
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  font-size: 1.2em;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  outline: none;
+}
+.aboutImage {
+  margin: 7px;
+  height: 300px;
+  border-radius: 5px;
+  /* position: relative; */
+}
+
+.aboutImageStyle {
+  height: 314px;
+  width: 314px;
+  background-color: rgba(0, 0, 0, 0);
+  display: block;
+  position: absolute;
+  z-index: -1;
+  border: rgb(161, 83, 235) solid 7px;
+  left: 45px;
+  top: -45px;
+}
+/* .aboutImage::after {
+  content: "";
+  height: 350px;
+  width: 250px;
+  display:block;
+  background-color: blueviolet;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 200;
+} */
+.aboutAniContainer {
+  display: flex;
+  align-items: center;
+  /* font-size: 2em; */
+}
+.aboutAniContainer .beforeText {
+  font-size: 2.5em;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+}
+
+/* ---------About animation style start--------- */
+.aboutWarper {
+  height: 40px;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0);
+  position: relative;
+  overflow: hidden;
+  animation-name: aboutSwapAni;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  display: flex;
+  align-items: center;
+  transform: translateX(-5px);
+  margin-left: 15px;
+  background-color: rebeccapurple;
+}
+@keyframes aboutSwapAni {
+  0% {
+    width: 3px;
+  }
+  50% {
+    width: 200px;
+  }
+  100% {
+    width: 3px;
+  }
+}
+.aboutWarper::after {
+  content: "";
+  background-color: rgb(45, 212, 241);
+  height: 40px;
+  width: 4px;
+  position: absolute;
+  right: 0;
+  /* border-radius: 10px; */
+  animation: colorChange 20s ease-in-out 0s infinite;
+}
+@keyframes colorChange {
+  0% {
+    background-color: violet;
+  }
+  25% {
+    background-color: rgb(194, 22, 22);
+  }
+  50% {
+    background-color: rgb(230, 123, 36);
+  }
+  75% {
+    background-color: rgb(51, 218, 240);
+  }
+  100% {
+    background-color: violet;
+  }
+}
+.aboutWarper .text1,
+.text2,
+.text3,
+.text4 {
+  font-size: 1.8em;
+  font-weight: 400;
+  font-family: "Ubuntu", sans-serif;
+  color: rgb(255, 255, 255);
+  white-space: nowrap;
+  position: absolute;
+  /* visibility: hidden; */
+}
+.aboutWarper .text1 {
+  left: 10px;
+  animation: text1show 20s linear 0s infinite;
+}
+@keyframes text1show {
+  0% {
+    visibility: visible;
+  }
+  25% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+.aboutWarper .text2 {
+  left: 10px;
+  animation: text2show 20s linear 5s infinite;
+}
+@keyframes text2show {
+  0% {
+    visibility: visible;
+  }
+  25% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+.aboutWarper .text3 {
+  left: 10px;
+  animation: text3show 20s linear 10s infinite;
+}
+@keyframes text3show {
+  0% {
+    visibility: visible;
+  }
+  25% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+.aboutWarper .text4 {
+  left: 20px;
+  animation: text4show 20s linear 15s infinite;
+}
+@keyframes text4show {
+  0% {
+    visibility: visible;
+  }
+  25% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+.aboutSection {
+  padding-top: 80px;
+  /* border-bottom: 5px solid purple; */
+}
+/* ---------About animation style end----------- */
+/*//! ---------------About Section End---------------- */
+
+/*//!-------------Skill Section Start-------------*/
+.skillSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(0, 0, 0);
+  padding-top: 50px;
+}
+
+.skillSectionTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* position: relative; */
+  margin-bottom: 7%;
+}
+
+.skillSectionTitle .mainTitle {
+  /* justify-self: center; */
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  position: relative;
+}
+
+
+.skillCardContainer {
+  display: grid;
+  grid-template-areas:
+    "html css js python"
+    "xd sass git kotlin";
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.skillCard {
+  /* 190 */
+  width: 190px;
+  /* 250 */
+  height: 250px;
+  /* margin: auto; */
+  /* margin-top: 50px;
+  margin-bottom: 50px; */
+  background: linear-gradient(
+    90deg,
+    rgb(17, 17, 17) 0%,
+    rgb(17, 17, 17) 50%,
+    rgb(26, 26, 26) 50%,
+    rgb(26, 26, 26) 100%
+  );
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.3s;
+}
+/* .skillCard:hover svg,.skillCard:hover p {
+  opacity: 0.2;
+} */
+.hoverBlur {
+  /* display: none; */
+  /* font-size: 0em; */
+  position: absolute;
+  opacity: 0;
+  padding: 30% 10% 10% 10%;
+  height: 100%;
+  width: 100%;
+  font-size: 1.2em;
+  background-color: rgba(39, 39, 39, 0.4);
+  font-family: 'Poppins', sans-serif;
+  /* font-weight: 400; */
+  text-align: center;
+  transition: 0.5s;
+  /* background-color: khaki; */
+}
+.skillCard:hover .hoverBlur {
+  opacity: 1;
+  color: white;
+  
+  backdrop-filter: blur(10px);
+}
+.skillCard:hover .cardIcon {
+  z-index: 1;
+  top: 0;
+  /* transform: translate(-150%, -280%); */
+}
+
+.cardIcon {
+  position: absolute;
+  top: 55%;
+  transition: 0.3s;
+
+  
+}
+
+.html5Card {
+  grid-area: html;
+}
+.css3Card {
+  grid-area: css;
+}
+.JSCard {
+  grid-area: js;
+}
+.XDCard {
+  grid-area: xd;
+}
+.pythonCard {
+  grid-area: python;
+}
+.sassCard {
+  grid-area: sass;
+}
+.gitCard {
+  grid-area: git;
+}
+.kotlinCard{
+  grid-area: kotlin;
+}
+
+.html5Svg > circle:nth-child(1),
+.JSSvg > circle:nth-child(1),
+.css3Svg > circle:nth-child(1),
+.XDSvg > circle:nth-child(1),
+.pythonSvg > circle:nth-child(1),
+.sassSvg > circle:nth-child(1),
+.gitSvg > circle:nth-child(1),
+.kotlinSvg > circle:nth-child(1) {
+  stroke: #000000;
+  stroke-width: 3.5px;
+  stroke-dasharray: 100;
+  stroke-linecap: round;
+  transform-origin: center;
+  transform: rotate(126deg);
+  fill: none;
+  transition: 0.5s;
+}
+.html5Svg > circle:nth-child(2),
+.JSSvg > circle:nth-child(2),
+.css3Svg > circle:nth-child(2),
+.XDSvg > circle:nth-child(2),
+.pythonSvg > circle:nth-child(2),
+.sassSvg > circle:nth-child(2),
+.gitSvg > circle:nth-child(2),
+.kotlinSvg > circle:nth-child(2) {
+  stroke-width: 3.5px;
+  stroke-linecap: round;
+  transform-origin: center;
+  transform: rotate(126deg);
+  fill: none;
+  transition: 0.5s;
+}
+
+.html5Svg > circle:nth-child(2) {
+  stroke: #ff8316;
+  stroke-dasharray: 90;
+  
+}
+
+.css3Svg > circle:nth-child(2) {
+  stroke: #1bcaff;
+  stroke-dasharray: 80;
+}
+
+.JSSvg > circle:nth-child(2) {
+  stroke: #fffb00;
+  stroke-dasharray: 75;
+}
+.XDSvg > circle:nth-child(2) {
+  stroke: #ff1cff;
+  stroke-dasharray: 65;
+}
+.pythonSvg > circle:nth-child(2) {
+  stroke: #2eff5b;
+  stroke-dasharray: 70;
+}
+.sassSvg > circle:nth-child(2) {
+  stroke: #ff3a86;
+  stroke-dasharray: 90;
+}
+.gitSvg >circle:nth-child(2) {
+  stroke: #afafaf;
+  stroke-dasharray: 85;
+}
+.kotlinSvg > circle:nth-child(2){
+  stroke-dasharray: 70;
+  stroke: purple;
+}
+
+
+.skillCard .parcentText {
+  color: white;
+  font-size: 3em;
+  position: absolute;
+  top: 30%;
+  transition: 0.5s;
+}
+.skillCard .parcentText span {
+  font-size: 0.5em;
+}
+
+.skillCard .cardTitle {
+  color: white;
+  font-size: 1.4em;
+  /* position: absolute; */
+  bottom: 10%;
+  transition: 0.5s;
+}
+
+/*//!-------------Skill Section End-------------*/
+
+/*//!------------- Media Quary---------------*/
+@media screen and (max-width: 1024px) {
+  .navLinkContainer {
+    display: none;
+  }
+  .navigation {
+    justify-content: center;
+  }
+  .manuButton {
+    display: flex;
+  }
+  .mobileHireButton {
+    display: block;
+  }
+  .sideBar {
+    border-right: rgb(255, 255, 255) solid 5px;
+  }
+  .headerElements{
+    transform: translateX(0);
+  }
+  .headerSvg {
+    display: none;
+  }
+  .aboutGridContainer {
+    grid-template-areas:
+      "abST"
+      "abIC"
+      "abMC";
+    grid-template-columns: 500px;
+    grid-row-gap: 70px;
+    width: 500px;
+  }
+  .aboutImageContainer {
+    margin: auto;
+  }
+  .skillCardContainer {
+    display: grid;
+    grid-template-areas:
+      "html css"
+      "js xd"
+      "python sass"
+      "git kotlin";
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navigation .logo {
+    font-size: 2.2em;
+  }
+  .navigation,
+  .navBlurbg {
+    height: 45px;
+  }
+  .bar1,
+  .bar2,
+  .bar3 {
+    height: 7px;
+    width: 7px;
+  }
+  .manuButton {
+    height: 27px;
+  }
+  .bar1Clicked,
+  .bar3Clicked {
+    height: 5px;
+    width: 35px;
+    border-radius: 2px;
+    border: solid black 1px;
+    background-color: crimson;
+  }
+  .mobileHireButton {
+    font-size: 1.1em;
+    height: 30px;
+    width: 65px;
+  }
+  
+  .profile {
+    transform: scale(0.8, 0.8);
+  }
+  .profilebg {
+    transform: scale(0.8, 0.8) rotateY(180deg);
+  }
+  
+  .headerTitle {
+    font-size: 2.2em;
+  }
+  .mainContent {
+    clip-path: polygon(0% 2%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  /* aboutSection */
+  .aboutGridContainer {
+    width: 85%;
+    grid-template-columns: 100%;
+  }
+  .aboutImageContainer {
+    height: 214px;
+    width: 214px;
+  }
+  .aboutImage {
+    height: 200px;
+  }
+  .aboutImageStyle {
+    height: 214px;
+    width: 214px;
+    top: -35px;
+    left: 35px;
+  }
+  .aboutMainContent .aboutParagraph {
+    font-size: 1.2em;
+  }
+  .skillCardContainer {
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  .skillCard {
+    height: 225px;
+    width: 171px;
+    transform: scale(0.8);
+  }
+}
